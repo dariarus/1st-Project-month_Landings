@@ -1,0 +1,22 @@
+@import '../../variables.scss';
+
+.button {
+  all: unset;
+  padding: 8px 24px;
+  box-sizing: border-box;
+  border-radius: 100px;
+  background-color: $pageMainColor;
+  cursor: pointer;
+  font-family: $baseFontFamily;
+  font-weight: 500;
+  font-size: map.get($fontSize, "baseFontSize");
+  line-height: map.get($lineHeight, "baseLineHeight");
+  color: $baseTextColor;
+  text-transform: uppercase;
+  transition: background-color .2s ease-in;
+}
+
+.button:hover {
+  background-color: #999999;
+}
+

@@ -1,0 +1,11 @@
+@import '../../../variables.scss';
+
+.button_type_up {
+  position: fixed;
+  bottom: 40px;
+  right: 60px;
+  z-index: 5;
+  background-color: $baseTextColor;
+  color: $pageMainColor;
+  box-shadow: 0 0 10px rgba(10, 10, 10, 1);
+}

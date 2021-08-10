@@ -1,0 +1,14 @@
+.slider__arrow {
+  all: unset;
+  position: absolute;
+  top: 45%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color .2s ease-in;
+}
+
+.slider__arrow:hover {
+  background-color: #999999;
+}

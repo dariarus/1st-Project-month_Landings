@@ -1,0 +1,20 @@
+@import '../../../variables.scss';
+
+.footer__email-field {
+  box-sizing: border-box;
+  width: 278px;
+  margin-right: 10px;
+  padding: 8px 0;
+  border: none;
+  border-radius: 100px;
+  font-family: $baseFontFamily;
+  font-weight: 500;
+  font-size: map.get($fontSize, "baseFontSize");
+  line-height: map.get($lineHeight, "baseLineHeight");
+  text-align: center;
+}
+
+.footer__email-field:focus {
+  outline: none;
+  background-color: #999999;
+}

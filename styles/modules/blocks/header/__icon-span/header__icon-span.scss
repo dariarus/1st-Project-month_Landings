@@ -1,0 +1,12 @@
+@import '../../../variables.scss';
+
+.header__icon-span {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 100%;
+  height: 4px;
+  background-color: $pageMainColor;
+  border-radius: 100px;
+  transform: scale(1) translate(0, -50%);
+}

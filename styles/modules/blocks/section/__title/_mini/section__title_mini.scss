@@ -1,0 +1,8 @@
+@import '../../../../variables.scss';
+
+.section__title_mini {
+  margin: 0;
+  max-width: 460px;
+  font-size: map.get($fontSize, "titleMiniFontSize");
+  line-height: map.get($lineHeight, "titleMiniLineHeight");
+}

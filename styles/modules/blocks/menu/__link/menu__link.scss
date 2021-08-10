@@ -1,0 +1,17 @@
+@import '../../../variables.scss';
+
+.menu__link {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+  font-family: $baseFontFamily;
+  font-size: map.get($fontSize, "titleMiniFontSize");
+  line-height: map.get($lineHeight, "titleMiniLineHeight");
+  color: $baseTextColor;
+  text-transform: uppercase;
+  transition: color .2s ease-in;
+}
+
+.menu__link:hover {
+  color: #999999;
+}

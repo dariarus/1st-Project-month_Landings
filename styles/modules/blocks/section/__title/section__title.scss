@@ -1,0 +1,12 @@
+@import '../../../variables.scss';
+
+.section__title {
+  margin: 0 0 40px 0;
+  font-family: $baseFontFamily;
+  font-weight: 500;
+  font-size: map.get($fontSize, "titleFontSize");
+  line-height: map.get($lineHeight, "titleLineHeight");
+  color: $baseTextColor;
+  text-align: center;
+  text-transform: uppercase;
+}

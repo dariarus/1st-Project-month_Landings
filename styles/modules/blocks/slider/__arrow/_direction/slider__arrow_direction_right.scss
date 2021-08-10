@@ -1,0 +1,7 @@
+@import '../../../../variables.scss';
+
+.slider__arrow_direction_right {
+  right: 20px;
+  background: url('../images/icons/arrow-right_white.svg') no-repeat center center $pageMainColor;
+  background-size: cover;
+}
