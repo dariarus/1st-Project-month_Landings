@@ -210,7 +210,6 @@
 .slider {
   position: relative;
   max-width: 1440px;
-  overflow: hidden;
 }
 
 .products__cards {
@@ -218,18 +217,24 @@
   flex-wrap: nowrap;
   margin: 0;
   padding: 0;
+  max-width: 1440px;
+  overflow-x: scroll;
 }
 
 .products__card {
   list-style: none;
   position: relative;
   margin: 0;
+  display: block;
+  height: 400px;
+  transform: translate(0px, 0px);
 }
 
 .products__card-image {
   display: block;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
+  height: 100%;
 }
 
 .button {

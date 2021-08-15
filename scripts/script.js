@@ -1,3 +1,36 @@
+/*** Динамическое добавление карточек товара на страницу ***/
+
+// найти контейнер карточек на странице и слайдер
+const sliderContainer = document.querySelector('.slider'); // окно слайдера
+const cardContainer = sliderContainer.querySelector('.products__cards'); // лента с карточками
+const buttonLeft = sliderContainer.querySelector('.slider__arrow_direction_left'); // стрелки слайдера
+const buttonRight = sliderContainer.querySelector('.slider__arrow_direction_right');
+const scrollItemContainer = sliderContainer.querySelector('.slider__scroll');
+
+window.addEventListener('load', () => {
+  productCards.forEach(item => {
+    addProductCard(item, cardContainer);
+  });
+}, true);
+
+// функция создания карточки
+function createProductCard(card) {
+// найти темплейт карточек и клонировать ноду
+  const cardTemplate = cardContainer.querySelector('#card-template').content;
+  const cardElement = cardTemplate.querySelector('.products__card').cloneNode(true);
+  // найти поля, куда надо вставлять информацию из массива
+  const cardImage = cardElement.querySelector('.products__card-image').src = card.image;
+
+  return cardElement;
+}
+
+//функция добавления карточки
+function addProductCard(card, cardContainer) {
+  const cardElement = createProductCard(card);
+  cardContainer.append(cardElement);
+}
+
+
 /*** Вызов меню при клике на иконку бургера ***/
 
 const header = document.querySelector('.header');
@@ -10,17 +43,18 @@ function openMenu() {
   menu.classList.add('menu_visible');
   burgerIcon.classList.add('header__icon_close-icon');
 }
+
 //функция закрытия меню
-function  closeMenu() {
+function closeMenu() {
   menu.classList.remove('menu_visible');
   burgerIcon.classList.remove('header__icon_close-icon');
 }
+
 // слушатель клика на бургер
 burgerIcon.addEventListener('click', () => {
   if (menu.classList.contains('menu_visible')) {
     closeMenu()
-  }
-  else {
+  } else {
     openMenu()
   }
 })
@@ -58,9 +92,73 @@ if (menuLinks.length > 0) {
         // вызов функции закрытия меню при клике на любую из ссылок
         closeMenu();
 
-        // отмена стандартного поведения браузера при клике по ссылке (отм.перехода по ссылге их атрибута href, кот. у нас пустой
+        // отмена стандартного поведения браузера при клике по ссылке (отм.перехода по ссылге из атрибута href, кот. у нас пустой
         e.preventDefault();
       }
     })
   });
 }
+
+
+/*** Создание слайдера ***/
+
+let pressedButton = false;
+let startSlideX;
+let x;
+let scrollLeft;
+
+// слушатель события ЗАжатия ПКМ над стрелкой и активация срабатывания прокрутки
+sliderContainer.addEventListener('mousedown', (e) => {
+  pressedButton = true;
+  /** метод MouseEvent.offsetX показывает отступ курсора мыши по оси Х от целевого DOM-узла.
+   * Т.е. можно кликнуть на любое место в sliderContainer, на любую карточку, и получить расстояние от левого края контейнера
+   * до указателя мыши **/
+  // метод MouseEvent.offsetLeft показывает число пикселей, на которое смещен текущий элемент влево относительно родителя
+  startSlideX = e.pageX - cardContainer.offsetLeft;
+  // меняем стиль курсора на "захват" при нажатии мыши
+  cardContainer.style.cursor = 'grabbing';
+  scrollLeft = cardContainer.scrollLeft;
+});
+
+sliderContainer.addEventListener('mouseenter', () => {
+  cardContainer.style.cursor = 'grab';
+});
+
+sliderContainer.addEventListener('mouseup', () => {
+  cardContainer.style.cursor = 'grab';
+});
+
+window.addEventListener('mouseup', () => {
+  pressedButton = false;
+});
+
+sliderContainer.addEventListener('mousemove', (e) => {
+  // если кнопка НАЖАТА (т.к. !pressedButton - это !false, т.е. это true), выйти из функции
+  if (!pressedButton) return;
+  e.preventDefault();
+
+  x = e.pageX - cardContainer.offsetLeft;
+  const moveMouse = x - startSlideX; // насколько курсор отодвинулся от исходной точки зажатия ПКМ
+  cardContainer.scrollLeft = scrollLeft - moveMouse;
+})
+
+// функция прокручивания слайдера, в аргументе - определение знака для формулы движени и, соотв-но, его направления влево-вправо
+function moveSlides(isMoveLeft) {
+  let signOfMoving = 1;
+  if (isMoveLeft) {
+    signOfMoving = -1;
+  }
+  cardContainer.scrollLeft = scrollLeft + signOfMoving * cardContainer.querySelector('.products__card').offsetWidth;
+}
+
+buttonLeft.addEventListener('click', () => {
+  moveSlides(true);
+})
+
+buttonRight.addEventListener('click', () => {
+  moveSlides(false);
+})
+//
+// const setCurrentPosition = () => {
+//   cardContainer.style.transform = 'translateX(' + -160 + 'px)';
+// }

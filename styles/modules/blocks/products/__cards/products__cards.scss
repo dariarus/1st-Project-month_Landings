@@ -3,4 +3,8 @@
   flex-wrap: nowrap;
   margin: 0;
   padding: 0;
+  max-width: 1440px;
+  overflow-x: scroll;
+  //transform: translate(0); //смещение ленты с карточками на столько-то
 }
+
