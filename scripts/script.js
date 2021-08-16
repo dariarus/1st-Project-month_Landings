@@ -5,8 +5,8 @@ const sliderContainer = document.querySelector('.slider'); // окно слай�
 const cardContainer = sliderContainer.querySelector('.products__cards'); // лента с карточками
 const buttonLeft = sliderContainer.querySelector('.slider__arrow_direction_left'); // стрелки слайдера
 const buttonRight = sliderContainer.querySelector('.slider__arrow_direction_right');
-const scrollItemContainer = sliderContainer.querySelector('.slider__scroll');
 
+// добавить отрисованные из темплейта карточки на страницу при ее загрузке
 window.addEventListener('load', () => {
   productCards.forEach(item => {
     addProductCard(item, cardContainer);
@@ -15,11 +15,11 @@ window.addEventListener('load', () => {
 
 // функция создания карточки
 function createProductCard(card) {
-// найти темплейт карточек и клонировать ноду
+  // найти темплейт карточек и клонировать ноду
   const cardTemplate = cardContainer.querySelector('#card-template').content;
   const cardElement = cardTemplate.querySelector('.products__card').cloneNode(true);
   // найти поля, куда надо вставлять информацию из массива
-  const cardImage = cardElement.querySelector('.products__card-image').src = card.image;
+  cardElement.querySelector('.products__card-image').src = card.image;
 
   return cardElement;
 }
@@ -107,8 +107,8 @@ let startSlideX;
 let x;
 let scrollLeft;
 
-// слушатель события ЗАжатия ПКМ над стрелкой и активация срабатывания прокрутки
-sliderContainer.addEventListener('mousedown', (e) => {
+// слушатель события ЗАжатия ПКМ над контейнером со слайдером и активация срабатывания прокрутки
+cardContainer.addEventListener('mousedown', (e) => {
   pressedButton = true;
   /** метод MouseEvent.offsetX показывает отступ курсора мыши по оси Х от целевого DOM-узла.
    * Т.е. можно кликнуть на любое место в sliderContainer, на любую карточку, и получить расстояние от левого края контейнера
@@ -120,11 +120,11 @@ sliderContainer.addEventListener('mousedown', (e) => {
   scrollLeft = cardContainer.scrollLeft;
 });
 
-sliderContainer.addEventListener('mouseenter', () => {
+cardContainer.addEventListener('mouseenter', () => {
   cardContainer.style.cursor = 'grab';
 });
 
-sliderContainer.addEventListener('mouseup', () => {
+cardContainer.addEventListener('mouseup', () => {
   cardContainer.style.cursor = 'grab';
 });
 
@@ -132,23 +132,25 @@ window.addEventListener('mouseup', () => {
   pressedButton = false;
 });
 
-sliderContainer.addEventListener('mousemove', (e) => {
+cardContainer.addEventListener('mousemove', (e) => {
   // если кнопка НАЖАТА (т.к. !pressedButton - это !false, т.е. это true), выйти из функции
   if (!pressedButton) return;
-  e.preventDefault();
+  e.preventDefault(); // отмена стандартного срабатывания браузера при зажатии мыши над элементом и перетаскивании курса (перенос картинок, выделение текста)
 
   x = e.pageX - cardContainer.offsetLeft;
   const moveMouse = x - startSlideX; // насколько курсор отодвинулся от исходной точки зажатия ПКМ
   cardContainer.scrollLeft = scrollLeft - moveMouse;
 })
 
-// функция прокручивания слайдера, в аргументе - определение знака для формулы движени и, соотв-но, его направления влево-вправо
+// функция прокручивания слайдера, в аргументе - определение знака для формулы движения и, соотв-но, его направления влево-вправо
 function moveSlides(isMoveLeft) {
   let signOfMoving = 1;
+  const widthToSlide = cardContainer.querySelector('.products__card').offsetWidth;
   if (isMoveLeft) {
     signOfMoving = -1;
   }
-  cardContainer.scrollLeft = scrollLeft + signOfMoving * cardContainer.querySelector('.products__card').offsetWidth;
+  //cardContainer.style.transform = `translateX(${-widthToSlide}px)`; - не работает
+  cardContainer.scrollLeft = scrollLeft + signOfMoving * widthToSlide;
 }
 
 buttonLeft.addEventListener('click', () => {
@@ -158,7 +160,3 @@ buttonLeft.addEventListener('click', () => {
 buttonRight.addEventListener('click', () => {
   moveSlides(false);
 })
-//
-// const setCurrentPosition = () => {
-//   cardContainer.style.transform = 'translateX(' + -160 + 'px)';
-// }

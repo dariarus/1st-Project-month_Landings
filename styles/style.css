@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import '../vendor/normalize.css';
 @import '../fonts/fonts.css';
 .page {
@@ -216,9 +217,25 @@
   display: flex;
   flex-wrap: nowrap;
   margin: 0;
-  padding: 0;
+  padding: 0 0 40px 0;
   max-width: 1440px;
   overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+
+/* полоса прокрутки (скроллбар) */
+::-webkit-scrollbar {
+  margin: 0 20px 0;
+  height: 4px;
+  /* высота для горизонтального скролла */
+  background-color: #292929;
+  border-radius: 100px;
+}
+
+/* ползунок скроллбара */
+::-webkit-scrollbar-thumb {
+  background-color: #ebebeb;
+  border-radius: 100px;
 }
 
 .products__card {
@@ -227,7 +244,6 @@
   margin: 0;
   display: block;
   height: 400px;
-  transform: translate(0px, 0px);
 }
 
 .products__card-image {

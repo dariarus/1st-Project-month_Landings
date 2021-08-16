@@ -2,9 +2,26 @@
   display: flex;
   flex-wrap: nowrap;
   margin: 0;
-  padding: 0;
+  padding: 0 0 40px 0;
   max-width: 1440px;
   overflow-x: scroll;
-  //transform: translate(0); //смещение ленты с карточками на столько-то
+  scroll-behavior: smooth; // плавная прокуртка скролла (нужна при нажатии на стрелки) без использования transition
+}
+
+/* полоса прокрутки (скроллбар) */
+.products__cards::-webkit-scrollbar {
+margin: 0 20px 0;
+  height: 4px; /* высота для горизонтального скролла */
+  background-color: #292929;
+  border-radius: 100px;
+}
+
+.products__cards::-webkit-scrollbar-track {
+  width: 1400px;
+}
+/* ползунок скроллбара */
+.products__cards::-webkit-scrollbar-thumb {
+  background-color: #ebebeb;
+  border-radius: 100px;
 }
 
