@@ -1,5 +1,9 @@
 .images {
   margin-top: 80px;
-  box-sizing: border-box;
-  min-height: 810px;
+}
+
+@media screen and (max-width: 648px) {
+  .images {
+    margin-top: 40px;
+  }
 }

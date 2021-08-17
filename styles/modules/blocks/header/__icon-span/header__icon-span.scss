@@ -10,3 +10,9 @@
   border-radius: 100px;
   transform: scale(1) translate(0, -50%);
 }
+
+@media screen and (max-width: 608px) {
+  .header__icon-span {
+    height: 2px;
+  }
+}

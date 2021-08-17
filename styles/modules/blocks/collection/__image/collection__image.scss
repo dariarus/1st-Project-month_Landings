@@ -1,0 +1,26 @@
+.collection__image {
+}
+
+@media screen and (max-width: 1080px) {
+  .collection__image {
+    max-width: 390px;
+  }
+}
+
+@media screen and (max-width: 868px) {
+  .collection__image {
+    max-width: 359px;
+  }
+}
+
+@media screen and (max-width: 748px) {
+  .collection__image {
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 398px) {
+  .collection__image {
+    max-width: 280px;
+  }
+}

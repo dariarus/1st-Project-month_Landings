@@ -1,3 +1,12 @@
 .footer__submit-form {
   padding: 40px 0;
 }
+
+@media screen and (max-width: 504px) {
+  .footer__submit-form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    align-items: center;
+  }
+}

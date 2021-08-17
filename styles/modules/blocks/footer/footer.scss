@@ -4,3 +4,9 @@
   align-items: center;
   padding-bottom: 80px;
 }
+
+@media screen and (max-width: 504px) {
+  .footer {
+    padding-bottom: 40px;
+  }
+}

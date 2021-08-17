@@ -25,9 +25,10 @@
 @import './modules/blocks/section/__title/section__title.scss';
 @import './modules/blocks/collection/__content/collection__content.scss';
 @import './modules/blocks/section/__text/section__text.scss';
+@import './modules/blocks/collection/__image/collection__image.scss';
 
 @import './modules/blocks/images/images.scss';
-@import './modules/blocks/images/_content/images_content_people.scss';
+@import 'modules/blocks/images/__content/images__content.scss';
 
 @import './modules/blocks/training/training.scss';
 @import './modules/blocks/section/__title/_mini/section__title_mini.scss';
@@ -42,16 +43,11 @@
 @import './modules/blocks/slider/__arrow/slider__arrow.scss';
 @import './modules/blocks/slider/__arrow/_direction/slider__arrow_direction_left.scss';
 @import './modules/blocks/slider/__arrow/_direction/slider__arrow_direction_right.scss';
-@import './modules/blocks/slider/__scroll-container/slider__scroll-container.scss';
-@import './modules/blocks/slider/__scroll-field/slider__scroll-field';
-@import './modules/blocks/slider/__scroll/slider__scroll';
-@import './modules/blocks/slider/__scroll-item/slider__scroll-item.scss';
 
 @import './modules/blocks/discipline/discipline.scss';
 
-@import './modules/blocks/images/_content/images_content_things.scss';
-
 @import './modules/blocks/footer/footer.scss';
+@import './modules/blocks/section/__text/_centered/section__text_centered.scss';
 @import './modules/blocks/footer/__submit-form/footer__submit-form.scss';
 @import './modules/blocks/footer/__email-field/footer__email-field.scss';
 @import './modules/blocks/button/_type/button_type_submit-button.scss';

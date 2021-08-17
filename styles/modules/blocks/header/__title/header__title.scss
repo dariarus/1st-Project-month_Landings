@@ -12,3 +12,12 @@
   text-transform: uppercase;
   color: $pageMainColor;
 }
+
+@media screen and (max-width: 686px) {
+  .header__title {
+    padding: 40px 0 0;
+    max-width: 350px;
+    font-size: map.get($fontSize, "titleMiniFontSize");
+    line-height: map.get($lineHeight, "titleMiniLineHeight");
+  }
+}

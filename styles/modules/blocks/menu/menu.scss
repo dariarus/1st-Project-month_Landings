@@ -15,3 +15,9 @@
   transition: top .3s ease 0s;
   overflow: auto; // дает возможноть скроллить само меню, а не страницу под ним
 }
+
+@media screen and (max-width: 686px) {
+  .menu {
+    min-height: 320px;
+  }
+}

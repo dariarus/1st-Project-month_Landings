@@ -6,3 +6,31 @@
   font-size: map.get($fontSize, "titleMiniFontSize");
   line-height: map.get($lineHeight, "titleMiniLineHeight");
 }
+
+@media screen and (max-width: 984px) {
+  .section__title_mini {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__title_mini {
+    max-width: 359px;
+    font-size: map.get($fontSize, "titleMiniFontSize") - 8px;
+    line-height: map.get($lineHeight, "titleMiniLineHeight") - 8px;
+    text-align: unset;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .section__title_mini {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 648px) {
+  .section__title_mini {
+    max-width: 359px;
+    margin-bottom: 20px;
+  }
+}

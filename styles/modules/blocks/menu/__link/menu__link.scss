@@ -15,3 +15,11 @@
 .menu__link:hover {
   color: #999999;
 }
+
+@media screen and (max-width: 768px) {
+  .menu__link {
+    font-size: map.get($fontSize, "titleMiniFontSize") - 8px;
+    line-height: map.get($lineHeight, "titleMiniLineHeight") - 8px;
+  }
+}
+

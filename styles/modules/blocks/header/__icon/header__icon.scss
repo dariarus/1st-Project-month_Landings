@@ -29,3 +29,15 @@
 .header__icon::after {
   bottom: 0;
 }
+
+@media screen and (max-width: 608px) {
+  .header__icon {
+    width: 25px;
+    height: 16px;
+    margin-top: 20px;
+  }
+  .header__icon::before,
+  .header__icon::after {
+    height: 2px;
+  }
+}

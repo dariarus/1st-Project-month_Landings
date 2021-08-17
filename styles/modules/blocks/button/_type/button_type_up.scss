@@ -9,3 +9,13 @@
   color: $pageMainColor;
   box-shadow: 0 0 10px rgba(10, 10, 10, 1);
 }
+
+@media screen and (max-width: 768px) {
+  .button_type_up {
+    bottom: 20px;
+    right: 20px;
+    padding: 20px 10px;
+    font-size: map.get($fontSize, "baseFontSize") - 8px;
+    line-height: map.get($lineHeight, "baseLineHeight") - 8px;
+  }
+}

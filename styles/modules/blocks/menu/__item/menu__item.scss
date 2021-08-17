@@ -6,3 +6,9 @@
 .menu__item:last-of-type {
   margin: 0;
 }
+
+@media screen and (max-width: 608px) {
+  .menu__item {
+    margin: 0 0 40px 0;
+  }
+}

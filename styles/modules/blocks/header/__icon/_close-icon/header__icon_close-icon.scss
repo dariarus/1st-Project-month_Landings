@@ -26,3 +26,11 @@
   transform: scale(0) translate(0, -50%);
   background-color: $baseTextColor;
 }
+
+
+@media screen and (max-width: 608px) {
+  .header__icon_close-icon:before,
+  .header__icon_close-icon:after {
+    height: 2px;
+  }
+}

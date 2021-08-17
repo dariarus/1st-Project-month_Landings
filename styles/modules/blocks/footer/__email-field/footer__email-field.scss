@@ -2,7 +2,7 @@
 
 .footer__email-field {
   box-sizing: border-box;
-  width: 278px;
+  min-width: 278px;
   margin-right: 10px;
   padding: 8px 0;
   border: none;
@@ -17,4 +17,11 @@
 .footer__email-field:focus {
   outline: none;
   background-color: #999999;
+}
+
+@media screen and (max-width: 504px) {
+  .footer__email-field {
+    min-width: 280px;
+    margin: 0 0 18px 0;
+  }
 }
