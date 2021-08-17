@@ -5,6 +5,21 @@
   padding: 0 0 40px 0;
   max-width: 1440px;
   overflow-x: scroll;
-  scroll-behavior: smooth; // плавная прокуртка скролла (нужна при нажатии на стрелки) без использования transition
+  scroll-behavior: smooth;
+  scrollbar-color: #ebebeb #292929;     /* Firefox: «цвет ползунка» «цвет полосы скроллбара» */
+  scrollbar-width: thin;  /* Firefox: высота скроллбара, без настроек */
 }
 
+/* браузеры chromium: полоса прокрутки (скроллбар) */
+.products__cards::-webkit-scrollbar {
+  margin: 0 20px 0;
+  height: 4px; /* высота для горизонтального скролла */
+  background-color: #292929;
+  border-radius: 100px;
+}
+
+/* ползунок скроллбара */
+.products__cards::-webkit-scrollbar-thumb {
+  background-color: #ebebeb;
+  border-radius: 100px;
+}

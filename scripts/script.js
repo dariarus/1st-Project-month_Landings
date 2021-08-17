@@ -1,10 +1,16 @@
-/*** Динамическое добавление карточек товара на страницу ***/
-
 // найти контейнер карточек на странице и слайдер
 const sliderContainer = document.querySelector('.slider'); // окно слайдера
 const cardContainer = sliderContainer.querySelector('.products__cards'); // лента с карточками
 const buttonLeft = sliderContainer.querySelector('.slider__arrow_direction_left'); // стрелки слайдера
 const buttonRight = sliderContainer.querySelector('.slider__arrow_direction_right');
+// переменны для меню-бургера
+const header = document.querySelector('.header');
+// найти элемент бургер на странице
+const burgerIcon = header.querySelector('.header__icon');
+const menu = header.querySelector('.menu');
+
+
+/*** Динамическое добавление карточек товара на страницу ***/
 
 // добавить отрисованные из темплейта карточки на страницу при ее загрузке
 window.addEventListener('load', () => {
@@ -32,11 +38,6 @@ function addProductCard(card, cardContainer) {
 
 
 /*** Вызов меню при клике на иконку бургера ***/
-
-const header = document.querySelector('.header');
-// найти элемент бургер на странице
-const burgerIcon = header.querySelector('.header__icon');
-const menu = header.querySelector('.menu');
 
 // функция открытия меню
 function openMenu() {
@@ -102,7 +103,7 @@ if (menuLinks.length > 0) {
 
 /*** Создание слайдера ***/
 
-let pressedButton = false;
+let pressedButton = false; // момент нажатия ПКМ
 let startSlideX;
 let x;
 let scrollLeft;
