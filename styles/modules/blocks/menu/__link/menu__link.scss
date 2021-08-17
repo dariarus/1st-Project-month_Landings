@@ -23,3 +23,9 @@
   }
 }
 
+@media screen and (max-width: 456px) {
+  .menu__link {
+    font-size: map.get($fontSize, "titleMiniFontSize") - 12px;
+    line-height: map.get($lineHeight, "titleMiniLineHeight") - 12px;
+  }
+}
