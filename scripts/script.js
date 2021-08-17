@@ -17,6 +17,8 @@ window.addEventListener('load', () => {
   productCards.forEach(item => {
     addProductCard(item, cardContainer);
   });
+
+  initProductCardsMouseMove();
 }, true);
 
 // функция создания карточки
@@ -103,55 +105,65 @@ if (menuLinks.length > 0) {
 
 /*** Создание слайдера ***/
 
-let pressedButton = false; // момент нажатия ПКМ
-let startSlideX;
-let x;
-let scrollLeft;
+/* Прокрутка слайдера при зажатии ПКМ */
+function initProductCardsMouseMove() {
+
+  let pressedButton = false; // момент нажатия ПКМ
+  let startSlideX;
+  let x;
+  let scrollLeft;
 
 // слушатель события ЗАжатия ПКМ над контейнером со слайдером и активация срабатывания прокрутки
-cardContainer.addEventListener('mousedown', (e) => {
-  pressedButton = true;
-  /** метод MouseEvent.offsetX показывает отступ курсора мыши по оси Х от целевого DOM-узла.
-   * Т.е. можно кликнуть на любое место в sliderContainer, на любую карточку, и получить расстояние от левого края контейнера
-   * до указателя мыши **/
-  // метод MouseEvent.offsetLeft показывает число пикселей, на которое смещен текущий элемент влево относительно родителя
-  startSlideX = e.pageX - cardContainer.offsetLeft;
-  // меняем стиль курсора на "захват" при нажатии мыши
-  cardContainer.style.cursor = 'grabbing';
-  scrollLeft = cardContainer.scrollLeft;
-});
+  cardContainer.addEventListener('mousedown', (e) => {
+    pressedButton = true;
+    /** метод MouseEvent.offsetX показывает отступ курсора мыши по оси Х от целевого DOM-узла.
+     * Т.е. можно кликнуть на любое место в sliderContainer, на любую карточку, и получить расстояние от левого края контейнера
+     * до указателя мыши **/
+    // метод MouseEvent.offsetLeft показывает число пикселей, на которое смещен текущий элемент влево относительно родителя
+    startSlideX = e.pageX - cardContainer.offsetLeft;
+    // меняем стиль курсора на "захват" при нажатии мыши
+    cardContainer.style.cursor = 'grabbing';
+    scrollLeft = cardContainer.scrollLeft;
+  });
 
-cardContainer.addEventListener('mouseenter', () => {
-  cardContainer.style.cursor = 'grab';
-});
+  cardContainer.addEventListener('mouseenter', () => {
+    cardContainer.style.cursor = 'grab';
+  });
 
-cardContainer.addEventListener('mouseup', () => {
-  cardContainer.style.cursor = 'grab';
-});
+  cardContainer.addEventListener('mouseup', () => {
+    cardContainer.style.cursor = 'grab';
+  });
 
-window.addEventListener('mouseup', () => {
-  pressedButton = false;
-});
+  window.addEventListener('mouseup', () => {
+    pressedButton = false;
+  });
 
-cardContainer.addEventListener('mousemove', (e) => {
-  // если кнопка НАЖАТА (т.к. !pressedButton - это !false, т.е. это true), выйти из функции
-  if (!pressedButton) return;
-  e.preventDefault(); // отмена стандартного срабатывания браузера при зажатии мыши над элементом и перетаскивании курса (перенос картинок, выделение текста)
+  cardContainer.addEventListener('mousemove', (e) => {
+    // если кнопка НАЖАТА (т.к. !pressedButton - это !false, т.е. это true), выйти из функции
+    if (!pressedButton) return;
+    e.preventDefault(); // отмена стандартного срабатывания браузера при зажатии мыши над элементом и перетаскивании курса (перенос картинок, выделение текста)
 
-  x = e.pageX - cardContainer.offsetLeft;
-  const moveMouse = x - startSlideX; // насколько курсор отодвинулся от исходной точки зажатия ПКМ
-  cardContainer.scrollLeft = scrollLeft - moveMouse;
-})
+    x = e.pageX - cardContainer.offsetLeft;
+    const moveMouse = x - startSlideX; // насколько курсор отодвинулся от исходной точки зажатия ПКМ
+    cardContainer.scrollLeft = scrollLeft - moveMouse;
+  })
+}
 
+/* Прокрутка слайдера при клике по кнопкам */
 // функция прокручивания слайдера, в аргументе - определение знака для формулы движения и, соотв-но, его направления влево-вправо
 function moveSlides(isMoveLeft) {
+  // добавление плавности пркрутки при нажатии кнопки
+  cardContainer.style.scrollBehavior = 'smooth';
   let signOfMoving = 1;
-  const widthToSlide = cardContainer.querySelector('.products__card').offsetWidth;
+  const widthToSlide = cardContainer.querySelector('.products__card');
   if (isMoveLeft) {
     signOfMoving = -1;
   }
+
   //cardContainer.style.transform = `translateX(${-widthToSlide}px)`; - не работает
-  cardContainer.scrollLeft = scrollLeft + signOfMoving * widthToSlide;
+  cardContainer.scrollLeft = cardContainer.scrollLeft + signOfMoving * widthToSlide.offsetWidth;
+  // снятие плавности прокрутки, чтобы при отпуске кнопки возвращалась плавность для скролла при зажатии ПКМ
+  cardContainer.style.scrollBehavior = 'unset';
 }
 
 buttonLeft.addEventListener('click', () => {
