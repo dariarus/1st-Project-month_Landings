@@ -34,3 +34,10 @@
     margin-bottom: 20px;
   }
 }
+
+@media screen and (max-width: 456px) {
+  .section__title_mini {
+    font-size: map.get($fontSize, "baseFontSize") + 4px;
+    line-height: map.get($lineHeight, "baseLineHeight") + 4px;
+  }
+}

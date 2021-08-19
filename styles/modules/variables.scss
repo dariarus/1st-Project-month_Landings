@@ -15,9 +15,3 @@ $lineHeight: (
   "titleMiniLineHeight": 40px,
   "titleLineHeight": 80px
 );
-
-@mixin text-settings {
-  font-family: $baseFontFamily;
-  font-size: $fontSize;
-  line-height: $lineHeight;
-}
