@@ -1,0 +1,15 @@
+.header {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 810px;
+  box-sizing: border-box;
+  background: url(../images/header-background.png) no-repeat center center;
+  background-size: cover;
+}
+
+@media screen and (max-width: 686px) {
+  .header {
+    min-height: 320px;
+  }
+}

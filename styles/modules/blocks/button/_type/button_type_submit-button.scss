@@ -1,0 +1,10 @@
+.button_type_submit-button {
+  border: 1px solid #fff;
+}
+
+@media screen and (max-width: 504px) {
+  .button_type_submit-button {
+    min-width: 280px;
+    text-align: center;
+  }
+}

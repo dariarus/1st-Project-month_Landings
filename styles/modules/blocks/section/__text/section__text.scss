@@ -1,0 +1,11 @@
+@import '../../../variables';
+
+.section__text {
+  margin: 0;
+  flex-basis: 50%;
+  font-family: $baseFontFamily;
+  font-size: map.get($fontSize, "baseFontSize");
+  line-height: map.get($lineHeight, "baseLineHeight");
+  color: $baseTextColor;
+}
+

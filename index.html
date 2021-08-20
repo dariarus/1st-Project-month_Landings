@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Nike'n'Sports</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link href="images/icons/dumbbell.jpg" rel="shortcut icon">
+  </head>
+  <body>
+    <div class="page">
+      <div class="content">
+        <!-- Header -->
+        <header class="header">
+          <button class="header__icon" type="button">
+            <span class="header__icon-span"></span>
+          </button>
+          <div class="menu">
+            <nav class="menu__list">
+              <ul class="menu__items">
+                <li class="menu__item"><a data-goto=".collection" href="#" class="menu__link">О коллекции</a></li>
+                <li class="menu__item"><a data-goto=".products" href="#" class="menu__link">Товары</a></li>
+                <li class="menu__item"><a data-goto=".footer" href="#" class="menu__link">Подписаться</a></li>
+              </ul>
+            </nav>
+          </div>
+
+          <h1 class="header__title">Nike x mmw training 4.0</h1>
+        </header>
+        <main>
+          <!-- About Collection -->
+          <section class="section collection">
+            <h2 class="section__title">О коллекции</h2>
+            <div class="collection__content">
+              <p class="section__text">Разум или тело, движение или покой, спорт или отдых — дисциплина всегда остаётся
+                движущей силой прогресса. Открой для себя мир невероятной концентрации и преданности делу. Дизайнер
+                Мэттью
+                Уильямс, визажистка Исамайя Ффренч и музыкант Ив Тюмор показывают, каких результатов можно достичь
+                благодаря упорству.</p>
+              <img src="images/tenacity.png" alt="Иллюстрация: упорство" class="collection__image">
+            </div>
+          </section>
+
+          <!-- Illustrations People -->
+          <section class="images">
+            <img src="./images/images-people.jpg" alt="Иллюстрация: команда проекта" class="images__content">
+          </section>
+
+          <!-- Training -->
+          <section class="section training">
+            <h2 class="section__title section__title_mini">Тренинг — это не просто физическая активность</h2>
+            <p class="section__text">Это практика для тела и разума, за которой стоят концентрация и дисциплина. Мэттью
+              Уильямс выражает эту идею через чередование движения и осознанности. Исамайя Ффренч исследует свою
+              способность совершать тяжёлые повторяющиеся действия с помощью йоги. Ив Тюмор превращает силовые
+              тренировки в эксперимент по испытанию силы духа.</p>
+          </section>
+
+          <!-- Products Slider -->
+          <section class="section products">
+            <h2 class="section__title">Товары</h2>
+            <div class="slider">
+              <ul class="products__cards">
+                <template id="card-template">
+                  <li class="products__card">
+                    <img src="" alt="Товар из новой коллекции" class="products__card-image">
+                    <button class="button button_type_buy-button" type="button">Купить</button>
+                  </li>
+                </template>
+              </ul>
+              <button class="slider__arrow slider__arrow_direction_left" type="button"></button>
+              <button class="slider__arrow slider__arrow_direction_right" type="button"></button>
+            </div>
+          </section>
+
+          <!-- Discipline -->
+          <section class="section discipline">
+            <p class="section__text">Дисциплина — упражнение, которое ты практикуешь ежедневно. Ты учишь свои разум и
+              тело переносить суровые условия и достигать невозможного. Раскрой свою внутреннюю силу с новой коллекцией
+              MMW, в которой идея дисциплины передается через высочайшее качество исполнения и исключительную
+              выразительность.</p>
+          </section>
+
+          <!-- Illustrations Things -->
+          <section class="images">
+            <img src="./images/images-things.jpg" alt="Иллюстрация: демонстрация стильных вещей"
+                 class="images__content">
+          </section>
+        </main>
+        <!-- Footer -->
+        <footer class="section footer">
+          <h2 class="section__title">Подписаться</h2>
+          <p class="section__text section__text_centered">Укажите свой email, чтобы быть в курсе даты релиза и других
+            новостей о коллекции</p>
+          <form action="URL" name="submit form" class="footer__submit-form">
+            <label>
+              <input class="footer__email-field" name="email" placeholder="Введите email" type="email">
+            </label>
+            <button class="button button_type_submit-button" type="submit">Подписаться</button>
+          </form>
+          <p class="section__text section__text_centered">&copy; Nike, Inc., 2021. Права защищены.</p>
+        </footer>
+        <button class="button button_type_up" type="button" data-goto=".header">Наверх</button>
+      </div>
+    </div>
+    <script src="scripts/script.js"></script>
+    <script src="scripts/product-cards.js"></script>
+  </body>
+</html>

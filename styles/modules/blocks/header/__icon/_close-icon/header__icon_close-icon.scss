@@ -1,0 +1,36 @@
+@import '../../../../variables.scss';
+
+.header__icon_close-icon::before,
+.header__icon_close-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  transition: all .3s ease 0s;
+  background-color: $baseTextColor;
+  border-radius: 100px;
+}
+
+.header__icon_close-icon::before {
+  top: 50%;
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.header__icon_close-icon::after {
+  bottom: 50%;
+  transform: rotate(45deg) translate(0, 50%);
+}
+
+.header__icon_close-icon .header__icon-span {
+  transform: scale(0) translate(0, -50%);
+  background-color: $baseTextColor;
+}
+
+
+@media screen and (max-width: 608px) {
+  .header__icon_close-icon:before,
+  .header__icon_close-icon:after {
+    height: 2px;
+  }
+}

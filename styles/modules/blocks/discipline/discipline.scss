@@ -1,0 +1,10 @@
+.discipline {
+  display: flex;
+  justify-content: flex-end;
+}
+
+@media screen and (max-width: 648px) {
+  .discipline {
+    display: block;
+  }
+}

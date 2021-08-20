@@ -1,0 +1,28 @@
+@import '../../../variables.scss';
+
+.section__title {
+  margin: 0 0 40px 0;
+  font-family: $baseFontFamily;
+  font-weight: 500;
+  font-size: map.get($fontSize, "titleFontSize");
+  line-height: map.get($lineHeight, "titleLineHeight");
+  color: $baseTextColor;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 748px) {
+  .section__title {
+    margin-bottom: 20px;
+    font-size: map.get($fontSize, "titleMiniFontSize") + 10px;
+    line-height: map.get($lineHeight, "titleMiniLineHeight") + 10px;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .section__title {
+    margin-bottom: 20px;
+    font-size: map.get($fontSize, "titleMiniFontSize");
+    line-height: map.get($lineHeight, "titleMiniLineHeight");
+  }
+}

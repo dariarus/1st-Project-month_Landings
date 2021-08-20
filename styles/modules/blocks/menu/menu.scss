@@ -1,0 +1,23 @@
+@import '../../variables.scss';
+
+.menu {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 810px;
+  text-align: center;
+  background-color: $pageMainColor;
+  transition: top .3s ease 0s;
+  overflow: auto; // дает возможноть скроллить само меню, а не страницу под ним
+}
+
+@media screen and (max-width: 686px) {
+  .menu {
+    min-height: 320px;
+  }
+}

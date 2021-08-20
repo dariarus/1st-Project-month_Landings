@@ -1,0 +1,55 @@
+@use "sass:map";
+
+@import '../vendor/normalize.css';
+@import '../fonts/fonts.css';
+
+@import './modules/variables.scss';
+
+@import './modules/blocks/page/page.scss';
+@import './modules/blocks/content/content.scss';
+
+@import './modules/blocks/header/header.scss';
+@import 'modules/blocks/header/__icon/header__icon.scss';
+@import 'modules/blocks/header/__icon-span/header__icon-span.scss';
+@import 'modules/blocks/header/__icon/_close-icon/header__icon_close-icon.scss';
+
+@import './modules/blocks/menu/menu.scss';
+@import './modules/blocks/menu/_visible/menu_visible.scss';
+@import './modules/blocks/menu/__items/menu__items.scss';
+@import './modules/blocks/menu/__item/menu__item.scss';
+@import './modules/blocks/menu/__link/menu__link.scss';
+
+@import './modules/blocks/header/__title/header__title.scss';
+
+@import './modules/blocks/section/section.scss';
+@import './modules/blocks/section/__title/section__title.scss';
+@import './modules/blocks/collection/__content/collection__content.scss';
+@import './modules/blocks/section/__text/section__text.scss';
+@import './modules/blocks/collection/__image/collection__image.scss';
+
+@import './modules/blocks/images/images.scss';
+@import 'modules/blocks/images/__content/images__content.scss';
+
+@import './modules/blocks/training/training.scss';
+@import './modules/blocks/section/__title/_mini/section__title_mini.scss';
+
+@import './modules/blocks/products/products.scss';
+@import './modules/blocks/slider/slider.scss';
+@import './modules/blocks/products/__cards/products__cards.scss';
+@import './modules/blocks/products/__card/products__card.scss';
+@import './modules/blocks/products/__card-image/products__card-image.scss';
+@import './modules/blocks/button/button.scss';
+@import './modules/blocks/button/_type/button_type_buy-button.scss';
+@import './modules/blocks/slider/__arrow/slider__arrow.scss';
+@import './modules/blocks/slider/__arrow/_direction/slider__arrow_direction_left.scss';
+@import './modules/blocks/slider/__arrow/_direction/slider__arrow_direction_right.scss';
+
+@import './modules/blocks/discipline/discipline.scss';
+
+@import './modules/blocks/footer/footer.scss';
+@import './modules/blocks/section/__text/_centered/section__text_centered.scss';
+@import './modules/blocks/footer/__submit-form/footer__submit-form.scss';
+@import './modules/blocks/footer/__email-field/footer__email-field.scss';
+@import './modules/blocks/button/_type/button_type_submit-button.scss';
+
+@import './modules/blocks/button/_type/button_type_up.scss';

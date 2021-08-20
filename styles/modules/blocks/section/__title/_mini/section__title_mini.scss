@@ -1,0 +1,43 @@
+@import '../../../../variables.scss';
+
+.section__title_mini {
+  margin: 0;
+  max-width: 460px;
+  font-size: map.get($fontSize, "titleMiniFontSize");
+  line-height: map.get($lineHeight, "titleMiniLineHeight");
+}
+
+@media screen and (max-width: 984px) {
+  .section__title_mini {
+    max-width: 400px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .section__title_mini {
+    max-width: 359px;
+    font-size: map.get($fontSize, "titleMiniFontSize") - 8px;
+    line-height: map.get($lineHeight, "titleMiniLineHeight") - 8px;
+    text-align: unset;
+  }
+}
+
+@media screen and (max-width: 715px) {
+  .section__title_mini {
+    max-width: 300px;
+  }
+}
+
+@media screen and (max-width: 648px) {
+  .section__title_mini {
+    max-width: 359px;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 456px) {
+  .section__title_mini {
+    font-size: map.get($fontSize, "baseFontSize") + 4px;
+    line-height: map.get($lineHeight, "baseLineHeight") + 4px;
+  }
+}

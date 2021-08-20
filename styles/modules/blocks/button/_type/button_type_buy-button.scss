@@ -1,0 +1,12 @@
+.button_type_buy-button {
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+@media screen and (max-width: 326px) {
+  .button_type_buy-button {
+    min-width: 286px;
+    text-align: center;
+  }
+}
