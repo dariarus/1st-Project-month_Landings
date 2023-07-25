@@ -4,6 +4,6 @@
 
 *Описание и функциональность*: Шeстая проектная работа в курсе Веб-разработчик плюс по теме "Практика разработки учебных проектов". Создание посадочной страницы по макету EASY-07 - (https://www.figma.com/file/G3UWFlQmNtNs67751YiDH2/Month-of-Landings?node-id=6%3A1503).
 
-*Используемые технологии*: HTML5, CSS3, flexbox, JavaScript
+*Используемые технологии*: HTML5, CSS3, SACC, flexbox, JavaScript
 
 *Ссылка на проектный сайт на GitHub Pages*: [тут](https://dariarus.github.io/1st-Project-month_Landings/)
